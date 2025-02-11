@@ -1,22 +1,27 @@
-public class Meeting extends Event, implements Completable {
-    Meeting(String name, LoaclDateTime start, LocaldateTime end:, String location) {
+import java.time.LocalDateTime;
 
+public class Meeting extends Event implements Completable {
+    String location;                // represents the location of the event.
+    LocalDateTime end;              // the time the meeting is over.
+    boolean complete;
+
+    public Meeting(String name, LocalDateTime start, LocalDateTime end, String location) {
+        super(name, start);         // Calls Event and constructs "name" and "start"
+        this.dateTime = end;
+        this.location = location;
     }  // Constructor
 
-    LocalDateTime endDateTime {
+    @Override
+    String getName() {
+        return name;
+    }
 
-    }  // the time the meeting is over.
-
-    String location {
-
-    }   // represents the location of the event.
-
-    void complete() {
-
+    public void complete() {
+        complete = true;
     }   // sets the complete boolean to true;
 
-    boolean isComplete()  {
-        return false;
+    public boolean isComplete()  {
+        return complete;
     }  // returns the complete boolean.
 
     LocalDateTime getEndTime() {

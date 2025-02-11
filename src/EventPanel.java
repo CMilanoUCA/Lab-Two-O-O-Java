@@ -1,14 +1,10 @@
 import javax.swing.*;
 
 public class EventPanel extends JPanel {
-    Event event {
+    Event event;            // the event that this panel displays.
 
-    }   // the event that this panel displays.
-
-    JButton completeButton {
-
-    }  // a button that completes the Event (sets the complete variable to true).
-    // Note, this should only appear on events that implement Completable.
+    JButton completeButton; // a button that completes the Event (sets the complete variable to true).
+                            // Note, this should only appear on events that implement Completable.
 
     // EventPanel should display the data of the Event:
         // name, time, name, duration (if applicable), location (if applicable), and completion status.
@@ -18,7 +14,7 @@ public class EventPanel extends JPanel {
     void updateUrgency() {
 
     } // EventPanel should set its background color according to the
-    // Urgency of the Event: red for overdue, yellow for imminent, green for distant.
-    // Applies only if optional features are being implemented.  Otherwise, there is no Urgency field.
+      // Urgency of the Event: red for overdue, yellow for imminent, green for distant.
+      // Applies only if optional features are being implemented.  Otherwise, there is no Urgency field.
 
 }
