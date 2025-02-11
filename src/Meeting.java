@@ -1,4 +1,4 @@
-public class Meeting {
+public class Meeting extends Event, implements Completable {
     Meeting(String name, LoaclDateTime start, LocaldateTime end:, String location) {
 
     }  // Constructor

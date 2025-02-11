@@ -1,4 +1,6 @@
-public class EventPanel {
+import javax.swing.*;
+
+public class EventPanel extends JPanel {
     Event event {
 
     }   // the event that this panel displays.

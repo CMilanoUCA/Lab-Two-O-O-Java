@@ -1,4 +1,4 @@
-public class Deadline {
+public class Deadline extends Event, implements Completable { //HOW TO WRITE??
     Deadline(String name, LocalDateTime deadline) {
 
     } // Constructor

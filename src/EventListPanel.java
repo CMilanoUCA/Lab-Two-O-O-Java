@@ -1,4 +1,6 @@
-public class EventListPanel {
+import javax.swing.*;
+
+public class EventListPanel extends JPanel {
     ArrayList<Event> events {
 
     }   // a list of the events to be listed.

@@ -1,4 +1,4 @@
-public class Event {
+abstract class Event implements Comparable<Event> {
     Event(String name, LocalDateTime dateTime) {
         this.name = name;
 
