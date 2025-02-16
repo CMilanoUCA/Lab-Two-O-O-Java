@@ -10,7 +10,7 @@ abstract class Event implements Comparable<Event> {
     LocalDateTime dateTime;    // the time and date the event starts.
 
     abstract String getName(); // abstract method that returns the name
-    // "String" might need to be "string"
+
     LocalDateTime getDateTime() {
         return dateTime;
     } // method that returns the dateTime.
@@ -30,3 +30,10 @@ abstract class Event implements Comparable<Event> {
        // and 0 if the two have the same dateTime.
 
 }
+
+
+/*
+I use AI to help with small, mundane coding tidbits I don't usually remember, like
+how to read and write in files. I also use AI to help answer bigger questions when
+teachers aren't around to be asked.
+ */

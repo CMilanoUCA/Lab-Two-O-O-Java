@@ -1,9 +1,8 @@
 import java.time.LocalDateTime;
 
-public class Deadline extends Event implements Completable { //HOW TO WRITE??
+public class Deadline extends Event implements Completable {
     Deadline(String name, LocalDateTime deadline) {
-        this.name = name;
-        this.dateTime = deadline;
+        super(name, deadline);
     } // Constructor
 
     @Override

@@ -1,4 +1,7 @@
+import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.Date;
 
 public class Meeting extends Event implements Completable {
     String location;                // represents the location of the event.
@@ -24,23 +27,23 @@ public class Meeting extends Event implements Completable {
         return complete;
     }  // returns the complete boolean.
 
-    LocalDateTime getEndTime() {
-
+    LocalDateTime getEndDateTime() {
+        return this.end;
     }   // returns the endDateTime
 
     Duration getDuration() {
-
+        return Duration.between(getEndDateTime(), super.getDateTime());
     }   // returns the duration of the meeting, (dateTime – endDateTime)
 
     String getLocation() {
-
+        return location;
     }   // returns the location of the meeting.
 
-    void setEndTime(Date end) {
-
+    void setEndDateTime(LocalDateTime end) {
+        this.end = end;
     }   // sets the end of the meeting.
 
     void setLocation(String location) {
-
+        this.location = location;
     }   // sets the location of the meeting.
 }
