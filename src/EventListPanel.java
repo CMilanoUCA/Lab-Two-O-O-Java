@@ -1,10 +1,15 @@
 import javax.swing.*;
 import java.util.ArrayList;
 
-// THESE NEED CONSTRUCTORS!!!
-
 public class EventListPanel extends JPanel {
-    EventListPanel() {}
+    EventListPanel() {  // Constructor?
+        events = new ArrayList<>();
+        controlPanel = new JPanel();
+        displayPanel = new JPanel();
+        sortDropDown = new JComboBox();
+        filterDisplay = new JCheckBox("Filter Display");
+        addEventButton = new JButton("Add Event");
+    }
 
 
     ArrayList<Event> events; // a list of the events to be listed.

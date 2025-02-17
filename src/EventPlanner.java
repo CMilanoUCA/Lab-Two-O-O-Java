@@ -4,7 +4,7 @@
 public class EventPlanner {
     public static void main(String[] args) {
         String[] event = new String[6];
-        event[0] = "Event\n";
+        event[0] = "Event" + "\n";
         event[1] = "Name: " + "\n";
         event[2] = "Date: " + "\n";
         event[3] = "Start Time: " + "\n";

@@ -1,6 +1,14 @@
 import javax.swing.*;
+import java.awt.*;
+import java.util.ArrayList;
 
 public class EventPanel extends JPanel {
+    EventPanel(Event event) {  // Constructor
+        this.event = event;
+        completeButton = new JButton("Complete");
+        setBackground(Color.BLUE);
+    }
+
     Event event;            // the event that this panel displays.
 
     JButton completeButton; // a button that completes the Event (sets the complete variable to true).
@@ -12,6 +20,8 @@ public class EventPanel extends JPanel {
         // or to add labels and have them display.
 
     void updateUrgency() {
+        //
+
 
     } // EventPanel should set its background color according to the
       // Urgency of the Event: red for overdue, yellow for imminent, green for distant.

@@ -10,7 +10,7 @@ public class Meeting extends Event implements Completable {
 
     public Meeting(String name, LocalDateTime start, LocalDateTime end, String location) {
         super(name, start);         // Calls Event and constructs "name" and "start"
-        this.dateTime = end;
+        this.end = end;
         this.location = location;
     }  // Constructor
 
@@ -32,7 +32,7 @@ public class Meeting extends Event implements Completable {
     }   // returns the endDateTime
 
     Duration getDuration() {
-        return Duration.between(getEndDateTime(), super.getDateTime());
+        return Duration.between(super.getDateTime(), end);
     }   // returns the duration of the meeting, (dateTime – endDateTime)
 
     String getLocation() {
