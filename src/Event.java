@@ -28,12 +28,4 @@ abstract class Event implements Comparable<Event> {
     }  // compares the date of this Event to the incoming event and returns
        // a positive int if this event comes later, a negative int if this event comes before,
        // and 0 if the two have the same dateTime.
-
 }
-
-
-/*
-I use AI to help with small, mundane coding tidbits I don't usually remember, like
-how to read and write in files. I also use AI to help answer bigger questions when
-teachers aren't around to be asked.
- */

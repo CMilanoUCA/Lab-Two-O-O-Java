@@ -57,7 +57,7 @@ public class EventListPanel extends JPanel {
 
         // Display Panel to Display Events
         displayPanel = new JPanel();
-        displayPanel.setPreferredSize(new Dimension(850, 650));
+        displayPanel.setPreferredSize(new Dimension(700, 650));
         add(displayPanel);
     }
 
@@ -67,10 +67,13 @@ public class EventListPanel extends JPanel {
     }
 
     public boolean isComplete(Event event) {
-        boolean isComplete = true;
+        boolean isComplete = false;
         for (JCheckBox filter : filterBoxes) {
             if (filter.isSelected()) {
                 Predicate<Event> pred = filters.get(filter.getText());
+                if (pred.test(event)) {
+                    isComplete = true;
+                }
             }
         }
         return isComplete;
