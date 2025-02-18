@@ -5,8 +5,13 @@ import java.util.ArrayList;
 public class EventPanel extends JPanel {
     EventPanel(Event event) {  // Constructor
         this.event = event;
+        setPreferredSize(new Dimension(670, 50));
         completeButton = new JButton("Complete");
         setBackground(Color.BLUE);
+
+        JLabel nameLabel = new JLabel("Event: " + event.getName());
+        nameLabel.setFont(nameLabel.getFont().deriveFont(Font.BOLD));
+        add(nameLabel);
     }
 
     Event event;            // the event that this panel displays.
