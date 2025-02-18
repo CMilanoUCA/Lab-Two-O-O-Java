@@ -20,6 +20,7 @@ public class EventPlanner {
         frame.setTitle("Control Options");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         EventListPanel eventListPanel = new EventListPanel();
+        addDefaultEvents(eventListPanel);
         frame.getContentPane().add(eventListPanel);
 
         frame.pack();
@@ -32,9 +33,11 @@ public class EventPlanner {
                 LocalDateTime.of(2025, 03, 01, 12, 25),
                 LocalDateTime.of(2025, 03, 01, 14, 25),
                 "Torreyson Library");
-
+        events.addEvent(defMeeting);
+        // Default Deadline
         Deadline defDeadline = new Deadline ("Java Project",
                 LocalDateTime.of(2025, 02, 18, 11, 59));
+        events.addEvent(defDeadline);
 
     }  // adds some default events to
     // the EventListPanel (at least one Deadline and one Meeting), so something shows up

@@ -98,41 +98,40 @@ public class AddEventModel extends JDialog {
 
             addEventButton = new JButton("Add Event");
             addEventButton.addActionListener(e -> {
-                Event event;
+                Event event = new Meeting("Task Assignment Meeting",
+                        LocalDateTime.of(2025, 2, 22, 12, 15),
+                        LocalDateTime.of(2025, 2, 22, 13, 15),
+                        "Torreysson Library");;
                 switch(eventSelector.getSelectedIndex()) {
                     case 0: event = new Meeting(
-                            ((JTextField)(attributes.get(0).component())).getText()),
-                        new start (Integer.parseInt(((JTextField)(attributes.get(1).component())).getText()),
+                            ((JTextField)(attributes.get(0).component())).getText(),
+                        LocalDateTime.of(Integer.parseInt(((JTextField)(attributes.get(1).component())).getText()),
                                 Integer.parseInt(((JTextField)(attributes.get(2).component())).getText()),
                                 Integer.parseInt(((JTextField)(attributes.get(3).component())).getText()),
                                 Integer.parseInt(((JTextField)(attributes.get(4).component())).getText()),
                                 Integer.parseInt(((JTextField)(attributes.get(5).component())).getText())
-                        ),
-                        new end (Integer.parseInt(((JTextField)(attributes.get(6).component())).getText()),
+                        ), LocalDateTime.of(Integer.parseInt(((JTextField)(attributes.get(6).component())).getText()),
                                 Integer.parseInt(((JTextField)(attributes.get(7).component())).getText()),
                                 Integer.parseInt(((JTextField)(attributes.get(8).component())).getText()),
                                 Integer.parseInt(((JTextField)(attributes.get(9).component())).getText()),
                                 Integer.parseInt(((JTextField)(attributes.get(10).component())).getText())
                         ),
-                                (((JTextField)(attributes.get(11).component())).getText());
+                                (((JTextField)(attributes.get(11).component())).getText()));
                     break;
                     case 1: event = new Deadline(
-                            ((JTextField)(attributes.get(0).component())).getText());
-                        new deadline (Integer.parseInt(((JTextField)(attributes.get(1).component())).getText()),
+                            ((JTextField)(attributes.get(0).component())).getText(),
+                        LocalDateTime.of(Integer.parseInt(((JTextField)(attributes.get(1).component())).getText()),
                                 Integer.parseInt(((JTextField)(attributes.get(2).component())).getText()),
                                 Integer.parseInt(((JTextField)(attributes.get(3).component())).getText()),
                                 Integer.parseInt(((JTextField)(attributes.get(4).component())).getText()),
-                                Integer.parseInt(((JTextField)(attributes.get(5).component())).getText())
-                        ),
+                                Integer.parseInt(((JTextField)(attributes.get(5).component())).getText()))
+                        );
 
 
                     break;
                 }
 
-                Meeting meeting = new Meeting("Task Assignment Meeting",
-                        LocalDateTime.of(2025, 2, 22, 12, 15),
-                        LocalDateTime.of(2025, 2, 22, 13, 15),
-                        "Torreysson Library");
+
                 eventListPanel.addEvent(event);
                 myself.dispose();
             });
