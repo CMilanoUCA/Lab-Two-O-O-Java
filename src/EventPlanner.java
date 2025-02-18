@@ -3,6 +3,7 @@
 
 public class EventPlanner {
     public static void main(String[] args) {
+        /*
         String[] event = new String[6];
         event[0] = "Event" + "\n";
         event[1] = "Name: " + "\n";
@@ -10,6 +11,7 @@ public class EventPlanner {
         event[3] = "Start Time: " + "\n";
         event[4] = "End Time: " + "\n";
         event[5] = "Location: " + "\n";
+         */
     }
 
     static void addDefaultEvents(EventListPanel events) {
