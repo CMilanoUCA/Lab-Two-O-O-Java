@@ -1,9 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Predicate;
 
@@ -17,6 +15,7 @@ public class EventListPanel extends JPanel {
     // by name, date, or by the same qualities but in reverse order.
     // Add the listener for this comboBox as using a lambda function.
 
+    final String[] FILTERS = {"DEADLINES ONLY", "MEETINGS ONLY", "SHOW COMPLETED"};
     JCheckBox filterDisplay; // a set of checkboxes that allow the user to filter the
     // displayed events, removing complete tasks, deadlines, or meetings.
     // Add the listener for the filterDisplay as an anonymous class.
@@ -25,21 +24,9 @@ public class EventListPanel extends JPanel {
     Map<String, Predicate<Event>> filters;
     ArrayList<JCheckBox> filterBoxes;
 
-    /*
-    EventListPanel() {  // Constructor
-        events = new ArrayList<>();
-        controlPanel = new JPanel();
-        displayPanel = new JPanel();
-        sortDropDown = new JComboBox();
-        filterDisplay = new JCheckBox("Filter Display");
-        addEventButton = new JButton("Add Event");
-    }
-    */
-
-
     public EventListPanel() {
-        setPreferredSize(new Dimension(1200, 900));
-        setBackground(Color.BLACK);
+        setPreferredSize(new Dimension(1200, 700));
+        setBackground(new Color(128, 0, 128));
 
         // Set Control Panel Size
         controlPanel = new JPanel();
@@ -54,12 +41,11 @@ public class EventListPanel extends JPanel {
         });
         controlPanel.add(addEventButton);
 
-        //JComboBox sortDropDown = new JComboBox(SORT_OPTIONS);
         sortDropDown.setFont(new Font("Arial", Font.BOLD, 30));
         sortDropDown.addActionListener(e -> {
                     if (sortDropDown.getSelectedItem().equals(SORT_OPTIONS[0]))
                     {  // NAME
-                        Collections.sort(events);
+                        events.sort((a1, a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
                     }
                     if (sortDropDown.getSelectedItem().equals(SORT_OPTIONS[1]))
                     {   // REVERSE_NAME
@@ -73,37 +59,15 @@ public class EventListPanel extends JPanel {
                     {   // REVERSE_DATE
                         Collections.sort(events, Collections.reverseOrder());
                     }
-                    //add(sortDropDown);
                     updateDisplay();
                 });
         add(sortDropDown);
-/*
-        filters = new HashMap<>();
-        // Adding the AnimalFilters pre-mades to the list--could add more.
-        filters.putAll(filterDisplay.getEventFilters());
-        filterBoxes = new ArrayList<>();
-        // initialize individual Checkboxes and add to ArrayList
-        // for (String filter : FILTERS) {
-        for ( String filter : filters.keySet()){
-            JCheckBox box = new JCheckBox(filter);
-            box.setFont(new Font("Arial", Font.BOLD, 30));
-            box.addItemListener(new ItemListener() {
-                @Override
-                public void itemStateChanged(ItemEvent e) {
-                    updateDisplay();
-                }
-            });
-            filterBoxes.add(box);
-        }
-        // Add each checkbox to the controlPanel
-        for (JCheckBox filter : filterBoxes)
-            controlPanel.add(filter);
-*/
         add(controlPanel);
 
         // Display Panel to Display Events
         displayPanel = new JPanel();
         displayPanel.setPreferredSize(new Dimension(700, 650));
+        displayPanel.setBackground(Color.DARK_GRAY);
         add(displayPanel);
     }
 

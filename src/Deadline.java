@@ -23,7 +23,7 @@ public class Deadline extends Event implements Completable {
     public String[] getAttributes() {
         String[] attributes = new String[2];
         attributes[0] = getName();
-        attributes[1] = LocalDateTime.now().toString();
+        attributes[1] = getDateTime().toString();
         return attributes;
     }
 }

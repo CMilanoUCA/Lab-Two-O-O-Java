@@ -1,6 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 
 public class EventPanel extends JPanel {
     Event event;            // the event that this panel displays.
@@ -13,7 +12,7 @@ public class EventPanel extends JPanel {
         setPreferredSize(new Dimension(670, 68));
         completeButton = new JButton("Complete");
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        setBackground(Color.CYAN);
+        setBackground(Color.GRAY);  // UCA Purple
 
         String[] attributes = event.getAttributes();
         for (String attribute : attributes) {
@@ -22,7 +21,6 @@ public class EventPanel extends JPanel {
             add(label);
         }
     }
-
     // EventPanel should display the data of the Event:
         // name, time, name, duration (if applicable),
         // location (if applicable), and completion status.

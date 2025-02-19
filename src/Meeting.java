@@ -1,7 +1,5 @@
 import java.time.Duration;
 import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.util.Date;
 
 public class Meeting extends Event implements Completable {
     String location;                // represents the location of the event.

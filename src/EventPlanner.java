@@ -4,7 +4,6 @@
 import javax.swing.*;
 import java.time.LocalDateTime;
 
-
 public class EventPlanner {
     public static void main(String[] args) {
         JFrame frame = new JFrame();
@@ -20,7 +19,7 @@ public class EventPlanner {
 
     static void addDefaultEvents(EventListPanel events) {
     // Default Meeting
-        Meeting defMeeting = new Meeting("Sepester Project Team Meeting",
+        Meeting defMeeting = new Meeting("Semester Project Team Meeting",
                 LocalDateTime.of(2025, 03, 01, 12, 25),
                 LocalDateTime.of(2025, 03, 01, 14, 25),
                 "Torreyson Library");

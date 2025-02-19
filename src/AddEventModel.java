@@ -16,14 +16,6 @@ public class AddEventModel extends JDialog {
     // name = Attribute name, component = how Attribute is collected
     private ArrayList<Attribute> attributes;
 
-    /*
-    AddEventModel modal;
-    record Attribute(String name, JComponent value) {}
-    ArrayList<Attribute> attributes;
-    JPanel infoCollectorPanel;
-    JComboBox<String> eventTypeComboBox;
-    */
-
     public AddEventModel(EventListPanel eventListPanel) {
         myself = this;
         this.eventListPanel = eventListPanel;
@@ -34,12 +26,10 @@ public class AddEventModel extends JDialog {
         this.setVisible(true);
     }
 
-
-
     private class addEventPanel extends JPanel {
         public addEventPanel() {
             setPreferredSize(new Dimension(500, 500));
-            setBackground(Color.BLUE);
+            setBackground(Color.DARK_GRAY);
 
             eventSelector = new JComboBox(events);
             //eventSelector.addActionListener(e -> {
@@ -48,7 +38,7 @@ public class AddEventModel extends JDialog {
             add(eventSelector);
 
             infoCollectionPanel = new JPanel();
-            infoCollectionPanel.setBackground(Color.CYAN);
+            infoCollectionPanel.setBackground(Color.GRAY);
             infoCollectionPanel.setPreferredSize(new Dimension(480, 400));
             eventSelector.addActionListener(e -> {
                 infoCollectionPanel.removeAll();
@@ -101,7 +91,8 @@ public class AddEventModel extends JDialog {
                 Event event = new Meeting("Task Assignment Meeting",
                         LocalDateTime.of(2025, 2, 22, 12, 15),
                         LocalDateTime.of(2025, 2, 22, 13, 15),
-                        "Torreysson Library");;
+                        "Torreysson Library");
+
                 switch(eventSelector.getSelectedIndex()) {
                     case 0: event = new Meeting(
                             ((JTextField)(attributes.get(0).component())).getText(),
@@ -134,5 +125,4 @@ public class AddEventModel extends JDialog {
             add(addEventButton);
         }
     }
-
 }
