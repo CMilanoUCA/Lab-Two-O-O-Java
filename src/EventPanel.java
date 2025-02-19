@@ -10,13 +10,17 @@ public class EventPanel extends JPanel {
 
     EventPanel(Event event) {  // Constructor
         this.event = event;
-        setPreferredSize(new Dimension(670, 50));
+        setPreferredSize(new Dimension(670, 68));
         completeButton = new JButton("Complete");
-        setBackground(Color.BLUE);
+        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        setBackground(Color.CYAN);
 
-        JLabel nameLabel = new JLabel("Event: " + event.getName());
-        nameLabel.setFont(nameLabel.getFont().deriveFont(Font.BOLD));
-        add(nameLabel);
+        String[] attributes = event.getAttributes();
+        for (String attribute : attributes) {
+            JLabel label = new JLabel(attribute);
+            label.setFont(label.getFont().deriveFont(Font.BOLD));
+            add(label);
+        }
     }
 
     // EventPanel should display the data of the Event:

@@ -27,6 +27,10 @@ public class Meeting extends Event implements Completable {
         return complete;
     }  // returns the complete boolean.
 
+    LocalDateTime getStartDateTime() {
+        return super.dateTime;
+    }
+
     LocalDateTime getEndDateTime() {
         return this.end;
     }   // returns the endDateTime
@@ -46,4 +50,13 @@ public class Meeting extends Event implements Completable {
     void setLocation(String location) {
         this.location = location;
     }   // sets the location of the meeting.
+
+    public String[] getAttributes() {
+        String[] attributes = new String[4];
+        attributes[0] = getName();
+        attributes[1] = getStartDateTime().toString();
+        attributes[2] = getEndDateTime().toString();
+        attributes[3] = getLocation();
+        return attributes;
+    }
 }

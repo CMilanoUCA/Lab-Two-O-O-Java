@@ -28,4 +28,6 @@ abstract class Event implements Comparable<Event> {
     }  // compares the date of this Event to the incoming event and returns
        // a positive int if this event comes later, a negative int if this event comes before,
        // and 0 if the two have the same dateTime.
+
+    public abstract String[] getAttributes();
 }

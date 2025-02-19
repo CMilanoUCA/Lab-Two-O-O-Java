@@ -39,7 +39,7 @@ public class AddEventModel extends JDialog {
     private class addEventPanel extends JPanel {
         public addEventPanel() {
             setPreferredSize(new Dimension(500, 500));
-            setBackground(Color.CYAN);
+            setBackground(Color.BLUE);
 
             eventSelector = new JComboBox(events);
             //eventSelector.addActionListener(e -> {
@@ -48,7 +48,7 @@ public class AddEventModel extends JDialog {
             add(eventSelector);
 
             infoCollectionPanel = new JPanel();
-            infoCollectionPanel.setBackground(Color.WHITE);
+            infoCollectionPanel.setBackground(Color.CYAN);
             infoCollectionPanel.setPreferredSize(new Dimension(480, 400));
             eventSelector.addActionListener(e -> {
                 infoCollectionPanel.removeAll();
@@ -126,19 +126,12 @@ public class AddEventModel extends JDialog {
                                 Integer.parseInt(((JTextField)(attributes.get(4).component())).getText()),
                                 Integer.parseInt(((JTextField)(attributes.get(5).component())).getText()))
                         );
-
-
                     break;
                 }
-
-
                 eventListPanel.addEvent(event);
                 myself.dispose();
             });
-
             add(addEventButton);
-
-
         }
     }
 

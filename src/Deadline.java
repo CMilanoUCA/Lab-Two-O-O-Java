@@ -19,4 +19,11 @@ public class Deadline extends Event implements Completable {
     public boolean isComplete() {
         return complete;
     }  // returns the complete boolean.
+
+    public String[] getAttributes() {
+        String[] attributes = new String[2];
+        attributes[0] = getName();
+        attributes[1] = LocalDateTime.now().toString();
+        return attributes;
+    }
 }
